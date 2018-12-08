@@ -20,6 +20,18 @@ jobs:
           command: npm install
 
       - run:
+          name: installing gulp
+          command: npm install gulp-cli -g
+
+      - run:
+          name: installing gulp
+          command: npm install gulp -D
+
+      - run:
+          name: installing gulp
+          command: npx -p touch nodetouch gulpfile.js
+
+      - run:
           name: Building
           command: gulp
 
@@ -45,6 +57,18 @@ jobs:
       - run:
           name: Installing Dependencies
           command: npm install
+
+      - run:
+          name: installing gulp
+          command: npm install gulp-cli -g
+
+      - run:
+          name: installing gulp
+          command: npm install gulp -D
+
+      - run:
+          name: installing gulp
+          command: npx -p touch nodetouch gulpfile.js
 
       - run:
           name: Building
