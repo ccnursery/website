@@ -21,7 +21,7 @@ jobs:
 
       - run:
           name: installing gulp
-          command: npm install gulp-cli -g
+          command: sudo npm install gulp-cli -g
 
       - run:
           name: installing gulp
@@ -60,7 +60,7 @@ jobs:
 
       - run:
           name: installing gulp
-          command: npm install gulp-cli -g
+          command: sudo npm install gulp-cli -g
 
       - run:
           name: installing gulp
