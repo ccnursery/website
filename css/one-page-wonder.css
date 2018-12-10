@@ -34,6 +34,10 @@ h6 {
   border-radius: 5rem;
 }
 
+.fixed-top {
+  z-index: 999;
+}
+
 .navbar-custom {
   padding-top: 1rem;
   padding-bottom: 1rem;
