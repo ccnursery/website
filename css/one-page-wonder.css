@@ -18,6 +18,16 @@ h6 {
   font-weight: 800 !important;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Catamaran';
+  font-weight: 800 !important;
+  color: #11bcb8;
+}
+
 .btn-xl {
   text-transform: uppercase;
   padding: 1.5rem 3rem;
@@ -36,14 +46,6 @@ h6 {
 
 .fixed-top {
   z-index: 999;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #11bcb8;
 }
 
 .navbar-custom {
@@ -171,4 +173,26 @@ header.masthead .bg-circle-4 {
 .btn-secondary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+.rounded-circle {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767.98px) {
+  .p-5 {
+    padding: 0px !important;
+  }
+  .p-5 p {
+    font-size: .8rem;
+  }
+  .rounded-circle {
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
