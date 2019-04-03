@@ -2,6 +2,10 @@
 
 [![CircleCI](https://circleci.com/gh/ccnursery/website.svg?style=svg)](https://circleci.com/gh/ccnursery/website)
 
+#### Node
+
+Use Node version v10.15.3
+
 
 #### Gulp Tasks
 
