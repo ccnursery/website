@@ -19,7 +19,7 @@ const pkg = require('./package.json');
 const banner = ['/*!\n',
   ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
   ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
+  ' * Licensed under <%= pkg.license %> (https://github.com/StartBootstrap/<%= pkg.name %>/blob/master/LICENSE)\n',
   ' */\n',
   '\n'
 ].join('');
@@ -50,40 +50,39 @@ function clean() {
 function modules() {
   // Bootstrap
   var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap'));
+      .pipe(gulp.dest('./vendor/bootstrap'));
   // jQuery
   var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
-    .pipe(gulp.dest('./vendor/jquery'));
+    './node_modules/jquery/dist/*',
+    '!./node_modules/jquery/dist/core.js'
+  ])
+      .pipe(gulp.dest('./vendor/jquery'));
   return merge(bootstrap, jquery);
 }
 
 // CSS task
 function css() {
   return gulp
-    .src("./scss/**/*.scss")
-    .pipe(plumber())
-    .pipe(sass({
-      outputStyle: "expanded",
-      includePaths: "./node_modules",
-    }))
-    .on("error", sass.logError)
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(gulp.dest("./css"))
-    .pipe(rename({
-      suffix: ".min"
-    }))
-    .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
-    .pipe(browsersync.stream());
+      .src("./scss/**/*.scss")
+      .pipe(plumber())
+      .pipe(sass({
+        outputStyle: "expanded",
+        includePaths: "./node_modules",
+      }))
+      .on("error", sass.logError)
+      .pipe(autoprefixer({
+        cascade: false
+      }))
+      .pipe(header(banner, {
+        pkg: pkg
+      }))
+      .pipe(gulp.dest("./css"))
+      .pipe(rename({
+        suffix: ".min"
+      }))
+      .pipe(cleanCSS())
+      .pipe(gulp.dest("./css"))
+      .pipe(browsersync.stream());
 }
 
 // Watch files
