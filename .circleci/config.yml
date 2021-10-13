@@ -89,9 +89,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - aws-s3/sync:
-          name: Deploy to S3
-          from: .
-          to: 's3://www.ccnurseryschool.ca/'
+          to: s3://www.ccnurseryschool.ca/
 
 workflows:
   version: 2
