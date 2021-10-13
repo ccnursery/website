@@ -97,6 +97,7 @@ jobs:
             cp img/* upload/img
             cp css/* upload/css
             cp index.html upload/index.html
+            
       - aws-s3/sync:
           from: upload
           to: s3://www.ccnurseryschool.ca
