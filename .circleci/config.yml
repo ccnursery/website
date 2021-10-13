@@ -91,6 +91,20 @@ jobs:
       - aws-s3/sync:
           from: .
           to: s3://www.ccnurseryschool.ca
+          arguments:
+            --exclude .circleci/* \
+            --exclude .git \
+            --exclude  .gitignore \
+            --exclude  .travis.yml \
+            --exclude  .gulpfile.js \
+            --exclude  LICENSE \
+            --exclude  node_modules/* \
+            --exclude  package-lock.json \
+            --exclude  package.json \
+            --exclude  README.md \
+            --exclude  scss/* \
+            --exclude  vendor/* 
+
 
 workflows:
   version: 2
