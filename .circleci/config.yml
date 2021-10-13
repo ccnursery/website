@@ -92,8 +92,7 @@ jobs:
           from: .
           to: s3://www.ccnurseryschool.ca
           arguments:
-            --exclude ".circleci/*" \
-            --exclude ".git"
+            --exclude ".circleci/*" 
 
 
 workflows:
