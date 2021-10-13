@@ -1,5 +1,6 @@
 version: 2
-
+orbs:
+  aws-s3: circleci/aws-s3@3.0
 jobs:
   build:
     docker:
@@ -87,20 +88,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-          name: Installing pip
-          command: sudo apt-get install python-pip python-dev build-essential 
-      - run:
-          name: Install awscli
-          command: sudo pip install awscli
-
-      - run:
-          name: Show files
-          command: ls -al
-
-      - run:
+      - aws-s3/sync:
           name: Deploy to S3
-          command: aws s3 sync . s3://www.ccnurseryschool.ca/ --delete
+          from: .
+          to: 's3://www.ccnurseryschool.ca/'
 
 workflows:
   version: 2
