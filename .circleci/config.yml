@@ -88,8 +88,17 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run:
+          name: prepare to upload
+          command: |
+            mkdir upload 
+            mkdir upload/img
+            mkdir upload/css
+            cp img/* upload/img
+            cp css/* upload/css
+            cp index.html upload/index.html
       - aws-s3/sync:
-          from: .
+          from: upload
           to: s3://www.ccnurseryschool.ca
 
 
