@@ -90,7 +90,7 @@ jobs:
 
       - aws-s3/sync:
           from: .
-          to: 'www.ccnurseryschool.ca'
+          to: s3://www.ccnurseryschool.ca
 
 workflows:
   version: 2
