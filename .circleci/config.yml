@@ -92,7 +92,7 @@ jobs:
           name: prepare to upload
           command: |
             mkdir upload 
-            mkdir upload/ vendor 
+            mkdir upload/vendor 
             mkdir upload/img
             mkdir upload/css
             cp -R img upload/img
