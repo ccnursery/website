@@ -92,10 +92,12 @@ jobs:
           name: prepare to upload
           command: |
             mkdir upload 
+            mkdir upload/ vendor 
             mkdir upload/img
             mkdir upload/css
-            cp img/* upload/img
-            cp css/* upload/css
+            cp -R img upload/img
+            cp -R css upload/css
+            cp -R vendor upload/vendor
             cp index.html upload/index.html
             
       - aws-s3/sync:
